@@ -1,31 +1,35 @@
-// If the sum of 3 real numbers x,y,z <1, then replace the smallest of these numbers with the half-sum of the other two, otherwise replace the smaller of x and y with the half-sum of the remaining two values.
+// A natural number n (n9999) is given. Is this number a palindrome (inverted) given four digits, like , e.g., the numbers 2222, 6116, 0440, etc.
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-    float x,y,z, sum;
-    cout << "Enter x: ";
-    cin >> x;
-
-    if (x <= 0)
+    float a, b, c;
+    cout << "Enter a: ";
+    cin >> a;
+    cout << "Enter b: ";
+    cin >> b;
+    cout << "Enter c: ";
+    cin >> c;
+    if (a >= b & b <= c)
     {
-        f = 0;
-    }
-    else if ( x <= 1 & 0 < x)
-    {
-        f = (x * x) - x;
+        a = 2 * a;
+        b = 2 * b;
+        c = 2 * c;
+        cout << "Doubled numbers" << endl;
     }
     else
     {
-        f = (x * x) - sin(M_PI * x * x);
+        abs(a);
+        abs(b);
+        abs(c);
+        cout << "Absolute values " << endl;
     }
 
-    cout << "f(x) = " << f << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
 
     return 0;
 }
-
-// 4. The real numbers a, b, c are given. Find the roots of the quadratic equation ax2+bx+c=0, otherwise the answer should be the message that there are no roots.
-// 5. The real numbers x, y, z are given. Find out if there is a triangle with lengths of sides x, y, z.

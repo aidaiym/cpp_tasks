@@ -1,34 +1,35 @@
-// The real numbers x and y (x!=y) are given . Replace the lesser of these numbers by the half-sum
-// of the numbers, and the greater by the doubled product.
-
+// Given the real numbers a, b, c. Double these numbers if a≥b≥c, and replace them with absolute values if not.
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-    float x, y;
-    cout << "Enter x: ";
-    cin >> x;
-    cout << "Enter y: ";
-    cin >> y;
-    if (x < y)
+    float a, b, c;
+    cout << "Enter a: ";
+    cin >> a;
+    cout << "Enter b: ";
+    cin >> b;
+    cout << "Enter c: ";
+    cin >> c;
+    if (a >= b & b <= c)
     {
-        x = (x + y) / 2;
-        y = 2 * y;
-    }
-    else if (x > y)
-    {
-        x = 2 * x;
-        y = (x + y) / 2;
+        a = 2 * a;
+        b = 2 * b;
+        c = 2 * c;
+        cout << "Doubled numbers" << endl;
     }
     else
     {
-        cout << "X and Y are equal = " << endl;
+        abs(a);
+        abs(b);
+        abs(c);
+        cout << "Absolute values " << endl;
     }
 
-    cout << "Y = " << y << endl;
-    cout << "X = " << x << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
 
     return 0;
 }

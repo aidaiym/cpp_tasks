@@ -69,7 +69,7 @@ using namespace std;
 
 int main()
 {
-    float x, y, z, sum;
+    float x, y, z, sum, smallest;
     cout << "Enter x: ";
     cin >> x;
     cout << "Enter y: ";
@@ -77,18 +77,40 @@ int main()
     cout << "Enter z: ";
     cin >> z;
     sum = x + y + z;
-    small = x < y < z;
     if (sum < 1)
     {
-        small = (oth1 + oth2) / 2;
+        if (x < z & x < y)
+        {
+            smallest = x;
+            smallest = (z + y) / 2;
+            cout << "Smallest number is x. X= " << smallest << endl;
+        }
+        else if (y < z & y < x)
+        {
+            smallest = y;
+            smallest = (z + x) / 2;
+            cout << "Smallest number is y.  Y= " << smallest << endl;
+        }
+        else
+        {
+            smallest = z;
+            smallest = (x + y) / 2;
+            cout << "Smallest number is z. Z= " << smallest << endl;
+        }
     }
-
     else
     {
-        smallXorY = (oth1 + oth2) / 2;
+        if (x < y)
+        {
+            x = (z + y) / 2;
+            cout << "x<y;  x = " << x << endl;
+        }
+        else if (y < x)
+        {
+            y = (z + x) / 2;
+            cout << "y<x; y = " << y << endl;
+        }
     }
-
-    cout << "Small = " << f << endl;
 
     return 0;
 }
@@ -100,59 +122,135 @@ using namespace std;
 
 int main()
 {
-    float a, b, c;
-    cout << "Enter x: ";
-    cin >> x;
-    cout << "Enter y: ";
-    cin >> y;
-    if (it_is_root)
+    float a, b, c, discriminant, x1, x2, x;
+    cout << "Enter a: ";
+    cin >> a;
+    cout << "Enter b: ";
+    cin >> b;
+    cout << "Enter c: ";
+    cin >> c;
+    discriminant = sqrt((b * b) - (4 * a * c));
+    if (discriminant > 0)
     {
-        a *x *x + b *x + c = 0 find x1 and x2;
+        x1 = (-b + discriminant) / (2 * a);
+        x2 = (-b - discriminant) / (2 * a);
+        cout << "Roots of the quadratic equation x1 = " << x1 << " x2 = " << x2 << endl;
+    }
+    else if (discriminant == 0)
+    {
+        x = -b / 2 * a;
+        cout << "Dicriminant = 0. Root of the quadratic equation = " << x << endl;
     }
     else
     {
-        cout << "There are no roots  " << endl;
+        cout << "There are no roots " << endl;
     }
-
-    cout << "Y = " << y << endl;
-    cout << "X = " << x << endl;
-
     return 0;
 }
-
-// Given three real numbers. Squared those of them whose values are non-negative.
-
+// The real numbers x, y, z are given. Find out if there is a triangle with lengths of sides x, y, z.
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-    float x, y, z, ans;
+    float x, y, z;
     cout << "Enter x: ";
     cin >> x;
     cout << "Enter y: ";
     cin >> y;
     cout << "Enter z: ";
     cin >> z;
-    if (x > 0)
-    {
-        ans = x * x;
-    }
 
-    else if (y > 0)
+    if ((x + y) > z & (x + z) > y & (z + y) > x)
     {
-        ans = y * y;
+        cout << "Yes! It's a triangle "  << endl;
     }
-    else if (z > 0)
+    else
     {
-        ans = z * z;
+        cout << "No, it's  not a triangle "  << endl;
     }
-    cout << "Small = " << f << endl;
 
     return 0;
 }
+// Given three real numbers. Squared those of them whose values are non-negative.
+#include <iostream>
 
+using namespace std;
+
+int main()
+{
+    float x, y, z;
+    cout << "Enter x: ";
+    cin >> x;
+    cout << "Enter y: ";
+    cin >> y;
+    cout << "Enter z: ";
+    cin >> z;
+
+    if (x > 0 || y > 0 || z > 0)
+    {
+        if (y > 0 & z > 0 & x > 0)
+        {
+            y = y * y;
+            x = x * x;
+            z = z * z;
+            cout << "All numbers are  non-negative  y= " << y << " x= " << x << " z= " << z << endl;
+        }
+        else if (x > 0 & y > 0 & z < 0)
+        {
+            x = x * x;
+            y = y * y;
+            cout << "X is  non-negative " << x << endl;
+            cout << "Y is  non-negative " << y << endl;
+        }
+        else if (x > 0 & y<0 & z> 0)
+        {
+            x = x * x;
+            z = z * z;
+            cout << "X is  non-negative " << x << endl;
+            cout << "Z is  non-negative " << z << endl;
+        }
+        else if (z < 0 & y<0 & x> 0)
+        {
+            x = x * x;
+            cout << "X is  non-negative " << x << endl;
+        }
+        else if (z<0 & y> 0 & x < 0)
+        {
+            y = y * y;
+            cout << "Y is  non-negative " << y << endl;
+        }
+        else if (y > 0 & z > 0 & x < 0)
+        {
+            y = y * y;
+            z = z * z;
+            cout << "Y is  non-negative " << y << endl;
+            cout << "Y is  non-negative " << z << endl;
+        }
+        else if (z > 0 & y > 0 & x < 0)
+        {
+            z = z * z;
+            y = y * y;
+            cout << "Y is  non-negative " << y << endl;
+            cout << "Z is  non-negative " << z << endl;
+        }
+        else if (z > 0 & y < 0 & x < 0)
+        {
+            z = z * z;
+            cout << "Z is  non-negative " << z << endl;
+        }
+    }
+    else if (x == 0 || y == 0 || z == 0)
+    {
+        cout << " Some number is zero. Zero is neither positive nor negative. " << endl;
+    }
+    else
+    {
+        cout << " All values are negative " << endl;
+    }
+    return 0;
+}
 // Given real numbers. Choose those that belong to the interval [1,3].
 
 #include <iostream>
@@ -227,5 +325,34 @@ int main()
     cout << "b = " << b << endl;
     cout << "c = " << c << endl;
 
+    return 0;
+}
+
+
+// A natural number n (n9999) is given. Is this number a palindrome (inverted) given four digits,like , e.g., the numbers 2222, 6116, 0440, etc.
+
+#include <iostream>
+using namespace std;
+int reverseDigits(int num)
+{
+    int rev_num = 0;
+    while (num > 0)
+    {
+        rev_num = rev_num * 10 + num % 10;
+        num = num / 10;
+    }
+    return rev_num;
+}
+
+int main()
+{
+    int num, reverse_number;
+    cout << "Enter a number: ";
+    cin >> num;
+    reverse_number = reverseDigits(num);
+    if (reverse_number == num)
+        cout << "It is a palindrome number = " << num << endl;
+    else
+        cout << "It is a not palindrome number = " << num << endl;
     return 0;
 }

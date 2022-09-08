@@ -1,35 +1,27 @@
-// Given the real numbers a, b, c. Double these numbers if a≥b≥c, and replace them with absolute values if not.
-#include <iostream>
+// A natural number n (n9999) is given. Is this number a palindrome (inverted) given four digits,like , e.g., the numbers 2222, 6116, 0440, etc.
 
+#include <iostream>
 using namespace std;
+int reverseDigits(int num)
+{
+    int rev_num = 0;
+    while (num > 0)
+    {
+        rev_num = rev_num * 10 + num % 10;
+        num = num / 10;
+    }
+    return rev_num;
+}
 
 int main()
 {
-    float a, b, c;
-    cout << "Enter a: ";
-    cin >> a;
-    cout << "Enter b: ";
-    cin >> b;
-    cout << "Enter c: ";
-    cin >> c;
-    if (a >= b & b <= c)
-    {
-        a = 2 * a;
-        b = 2 * b;
-        c = 2 * c;
-        cout << "Doubled numbers" << endl;
-    }
+    int num, reverse_number;
+    cout << "Enter a number: ";
+    cin >> num;
+    reverse_number = reverseDigits(num);
+    if (reverse_number == num)
+        cout << "It is a palindrome number = " << num << endl;
     else
-    {
-        abs(a);
-        abs(b);
-        abs(c);
-        cout << "Absolute values " << endl;
-    }
-
-    cout << "a = " << a << endl;
-    cout << "b = " << b << endl;
-    cout << "c = " << c << endl;
-
+        cout << "It is a not palindrome number = " << num << endl;
     return 0;
 }

@@ -1,19 +1,19 @@
-// Find sum and  product of a sequence of 10 integers from 1 to 10.
+// A natural n is given. Find function
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-    int number, sum;
-    number = 1;
+    float number, result, counter;
+    cout << "Enter natural number: ";
+    cin >> number;
+    counter = 1;
     do
     {
-        sum += number;
-        number++;
-    cout << "Number " << number << " sum " << sum << endl;
-
-    } while (number < 10);
-    cout << "Number " << number << " sum " << sum << endl;
+        result += 3;
+        counter++;
+    } while (counter <= number);
+    cout << "The sum and product of a sequence  is " << result << endl;
     return 0;
 }

@@ -104,3 +104,116 @@ int main()
     }
     return 0;
 }
+
+//  A natural n is given. Calculate: a
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n, result, counter;
+    cout << "Enter a natural number:";
+    cin >> n;
+    counter = 1;
+    while (counter <= n)
+    {
+        result *= 1 + (1 / (counter * counter));
+        counter++;
+    }
+    cout << "result " << result << endl;
+}
+
+// A natural n is given. Calculate: b
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n, result, counter;
+    cout << "Enter a natural number:";
+    cin >> n;
+    counter = 1;
+    while (counter <= n)
+    {
+        result +=  1/sin(counter);
+        counter++;
+    }
+    cout << "result " << result << endl;
+}
+
+// A natural n is given. Calculate c
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n, result, counter;
+    cout << "Enter a natural number:";
+    cin >> n;
+    counter = 1;
+    result = 1;
+    while (counter <= n)
+    {
+        result += sqrt(2);
+        counter++;
+    }
+    cout << "result " << result << endl;
+}
+
+// A natural n is given. Calculate:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n, result, counter;
+    cout << "Enter a natural number:";
+    cin >> n;
+    counter = 1;
+    result = 1;
+    while (counter <= n)
+    {
+        result *= cos(counter)/sin(counter);
+        counter++;
+    }
+    cout << "result " << result << endl;
+}
+
+// Find the sum and product of a sequence of 10 integers from 1 to 10.
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float number, result, counter;
+    counter = 1;
+    do
+    {
+        result += 1./(counter * counter);
+        counter++;
+    } while (counter <= 10);
+    cout << "The sum and product of a sequence  is " << result << endl;
+    return 0;
+}
+
+// A real number a is given. Find among the numbers
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float number, result, n,x;
+    cout << "Enter positive integer:";
+    cin >> number;
+    for (n = 1; n <= number; n++)
+    {
+        result += pow(sin(x), n);
+    }
+    cout << "The result is "  << result << endl;
+}

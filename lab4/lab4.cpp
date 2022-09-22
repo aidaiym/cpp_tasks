@@ -40,17 +40,23 @@ int main()
 #include <iostream>
 using namespace std;
 
-float resultairTemperatureMonth[] = {-273.15, 67.8, -240.0, 12.2, -184.4, 15.7, -128.9};
-int i, average = 0;
-int summ = 0;
+float resultairTemperatureMonth[] = {-273.15, 67.8, 240.0, 12.2, 184.4, 15.7, -128.9};
+int i, average, counter, summ = 0;
 int main()
 {
-  for (i = 0; i < 7; i++)
-  {
-    summ += airTemperatureMonth[i];
-    cout << "Temperature  = " << airTemperatureMonth << endl;
-  }
-  return 0;
+    for (i = 0; i < 7; i++)
+    {
+        summ += resultairTemperatureMonth[i];
+        if (resultairTemperatureMonth[i] < 0)
+        {
+            counter++;
+        }
+        average = summ / 7;
+    }
+    cout << "Average  = " << average << endl;
+    cout << counter << " times the temperature dropped below 0 degrees" << endl;
+
+    return 0;
 }
 // 4. Given natural numbers N, a0,a1,....,a(N-1). Determine the number of members of the sequence that have even ordinal numbers and are odd numbers.
 #include <iostream>
@@ -70,6 +76,83 @@ int main()
   cout << count << '\n';
 }
 // 5. Determine whether the given sequence is increasing (use the break operator to avoid unnecessary checks).
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    int n;
+    int a[100];
+    bool isIncreasing = true;
+    cout << "Input number of elements: ";
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        if (a[i] >= a[i + 1])
+        {
+            isIncreasing = false;
+            break;
+        }
+    }
+    if (isIncreasing == false)
+    {
+        cout << "Sequence is not increasing." << endl;
+    }
+    else
+    {
+        cout << "Sequence is increasing." << endl;
+    }
+
+    return 0;
+}
+// 5. Determine whether the given sequence is increasing (use the break operator to avoid unnecessary checks).
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    int a[100];
+
+    cout << "Input number of elements: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+
+    bool ans = true;
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        if (a[i] >= a[i + 1])
+        {
+            ans = false;
+        }
+    }
+
+    if (ans == false)
+    {
+        cout << "Sequence is not increasing.";
+    }
+    else
+    {
+        cout << "Sequence is increasing.";
+    }
+
+    return 0;
+}
+
+
 // 6. There is an array of numbers. Determine how many pairs of nonidentical adjacent elements it contains.
 #include <iostream>
 using namespace std;

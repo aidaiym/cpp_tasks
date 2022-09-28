@@ -230,8 +230,54 @@ a) Find the number of teams with more wins than losses.
 b) Find the numbers of teams that passed the championship without losses.
 c) Find out if there is at least one team that wins more than half of the games.
 */
+// #7 There is a two-dimensional array with 3 rows and 4 columns. Arrange the array in descending order of the elements of the 3rd row.
+#include <iostream>
+using namespace std;
+int main()
 
+{
+    int arr[3][4], i, j, x;
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 4; j++)
+        {
+            cout << "Enter arr: "
+                 << "[" << i << "]"
+                 << "[" << j << "] ";
+            cin >> arr[i][j];
+        }
+        cout << endl;
+    }
+    cout << "Entered 2D Array: " << endl;
 
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 4; j++)
+        {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+    for (j = 0; j < 4; j++)
+        for (i = 0; i < 4; i++)
+            if (arr[2][j] < arr[2][i])
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    x = arr[k][i];
+                    arr[k][i] = arr[k][j];
+                    arr[k][j] = x;
+                }
+            }
+    cout << "Array in descending order of the elements of the 3rd row: " << endl;
 
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 4; j++)
+            cout << arr[i][j] << " ";
+        cout << endl;
+    }
+    return 0;
+}
 
-// 2;6 not done 
+// 2;6;8;9;10;11;12 not done 

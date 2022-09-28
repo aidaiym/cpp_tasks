@@ -1,3 +1,11 @@
-    // cout << "Element at x[" << i
-            //      << "][" << j << "]: ";
-            // cout << x[i][j]<<endl;
+ // summ += arr[i][0];
+        // summ1  += arr[i][1];
+        // summ2  += arr[i][2];
+        // summ3  += arr[i][3];
+        // summ4  += arr[i][4];
+        // summ5  += arr[i][5];
+        // arithmetic_mean = summ/3;
+        // arithmetic_mean = summ/3;
+        // arithmetic_mean = summ/3;
+        // arithmetic_mean = summ/3;
+        // arithmetic_mean = summ/3;
